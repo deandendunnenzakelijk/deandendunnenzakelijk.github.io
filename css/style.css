@@ -29,6 +29,7 @@ nav a {
   font-weight: bold;
   padding: 0.35rem 0.75rem;
   border-radius: 4px;
+  transition: background-color 0.15s ease;
 }
 
 nav a:hover {
@@ -64,40 +65,33 @@ footer {
 
 .hero {
   text-align: center;
+  padding-top: 1rem;
 }
 
-.hero-photo {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 auto 1rem;
-  display: block;
+.hero h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  letter-spacing: -0.01em;
 }
 
 .hero .tagline {
   color: #666666;
+  letter-spacing: 0.02em;
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+
+.hero .tagline:first-of-type {
+  color: #333333;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.9rem;
-  margin-top: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
 }
 
-.tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0;
-  margin: 1.5rem 0;
-}
-
-.tags li {
-  border: 1px solid #e0e0e0;
-  border-radius: 999px;
-  padding: 0.3rem 0.9rem;
+.hero .tagline:last-of-type {
   font-size: 0.9rem;
+  margin-bottom: 1.75rem;
 }
 
 .button {
@@ -108,10 +102,12 @@ footer {
   padding: 0.6rem 1.5rem;
   border-radius: 4px;
   font-weight: bold;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .button:hover {
   background-color: #333333;
+  transform: translateY(-1px);
 }
 
 .socials {
@@ -132,6 +128,10 @@ footer {
   border-radius: 50%;
 }
 
+.socials a {
+  transition: background-color 0.15s ease;
+}
+
 .socials a:hover {
   background-color: #f2f2f2;
 }
@@ -139,4 +139,32 @@ footer {
 .social-icon {
   width: 20px;
   height: 20px;
+}
+
+.discord-badge {
+  position: relative;
+}
+
+.discord-badge .tooltip {
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111111;
+  color: #ffffff;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  width: max-content;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+}
+
+.discord-badge:hover .tooltip,
+.discord-badge:focus-visible .tooltip {
+  opacity: 1;
+  visibility: visible;
 }
